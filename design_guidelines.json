@@ -1,0 +1,180 @@
+{
+  "identity": {
+    "name": "E1",
+    "role": "Anti-AI Designer",
+    "principles": [
+      "Fusion over Imitation: Mix disparate disciplines.",
+      "Emotion First: Every decision maps to a feeling.",
+      "Content is King: Direct the user's attention.",
+      "Zoom In: Focus on essential details.",
+      "Negative Space: Value empty areas.",
+      "Contrast: Light vs Dark, Rough vs Smooth."
+    ],
+    "anti_patterns": [
+      "Purple/Teal for CTA (Use Indigo/Violet or Monochrome)",
+      "Inter everywhere (Use Manrope for Headings)",
+      "Center-Everything (Use Asymmetry)",
+      "Gradient Overload (Use Texture/Noise)"
+    ]
+  },
+  "typography": {
+    "fonts": {
+      "headings": {
+        "family": "Manrope, sans-serif",
+        "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap",
+        "weights": ["400", "500", "600", "700", "800"],
+        "usage": "Headings (h1-h6), Hero Text, Big Stats"
+      },
+      "body": {
+        "family": "'Plus Jakarta Sans', sans-serif",
+        "url": "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap",
+        "weights": ["400", "500", "600", "700"],
+        "usage": "Body text, UI labels, Buttons, Inputs"
+      },
+      "mono": {
+        "family": "'JetBrains Mono', monospace",
+        "url": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap",
+        "weights": ["400", "500"],
+        "usage": "Code blocks, IDs, API Keys, JSON Viewer"
+      }
+    },
+    "rules": [
+      "Headings (Size > 32px): MUST use tracking-tight or tracking-tighter.",
+      "Overlines / Labels: Uppercase + Tiny + Wide Spacing (tracking-[0.2em]).",
+      "Line Height: Tight (leading-none) for headers, Loose (leading-relaxed) for body.",
+      "Contrast: Text must meet APCA standards. Muted text should not be too faint."
+    ]
+  },
+  "colors": {
+    "theme": "dark",
+    "palette": {
+      "background": "#09090b",
+      "foreground": "#fafafa",
+      "card": "#18181b",
+      "card_foreground": "#fafafa",
+      "popover": "#09090b",
+      "popover_foreground": "#fafafa",
+      "primary": "#6366f1",
+      "primary_foreground": "#fafafa",
+      "secondary": "#27272a",
+      "secondary_foreground": "#fafafa",
+      "muted": "#27272a",
+      "muted_foreground": "#a1a1aa",
+      "accent": "#27272a",
+      "accent_foreground": "#fafafa",
+      "destructive": "#ef4444",
+      "destructive_foreground": "#fafafa",
+      "border": "#27272a",
+      "input": "#27272a",
+      "ring": "#6366f1"
+    },
+    "status": {
+      "success": "#10b981",
+      "warning": "#f59e0b",
+      "error": "#ef4444",
+      "info": "#3b82f6"
+    },
+    "rules": [
+      "Use 'Zinc' palette for neutrals (cool gray).",
+      "Primary color (Indigo) used sparingly for CTAs and active states.",
+      "Borders should be subtle (opacity 40% or #27272a).",
+      "No full-screen gradients. Use texture or solid colors."
+    ]
+  },
+  "layout": {
+    "grid_system": "Bento Grid (Mode B: High Density)",
+    "spacing": {
+      "container_padding": "p-6 md:p-8 lg:p-10",
+      "element_gap": "gap-4 md:gap-6",
+      "section_gap": "gap-8 md:gap-12"
+    },
+    "constraints": {
+      "max_width": "max-w-7xl",
+      "mobile_image_height": "max-h-[80vh]"
+    },
+    "strategies": [
+      "Sidebar Navigation (Left fixed) for App Layout.",
+      "Top Header for Breadcrumbs, User Profile, Theme Toggle.",
+      "Main Content Area: Scrollable, padded.",
+      "Dashboard: Grid layout with varied span sizes (1x1, 2x1, 2x2)."
+    ]
+  },
+  "components": {
+    "buttons": {
+      "style": "rounded-md",
+      "animation": "hover:scale-[1.02] active:scale-[0.98] transition-transform",
+      "variants": {
+        "default": "bg-primary text-primary-foreground hover:bg-primary/90",
+        "secondary": "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        "ghost": "hover:bg-accent hover:text-accent-foreground",
+        "outline": "border border-input bg-background hover:bg-accent hover:text-accent-foreground"
+      }
+    },
+    "cards": {
+      "style": "bg-card text-card-foreground rounded-lg border border-border shadow-sm",
+      "hover": "hover:shadow-md transition-shadow",
+      "variants": {
+        "stats": "p-6 flex flex-col justify-between",
+        "workflow": "group relative overflow-hidden hover:border-primary/50 transition-colors"
+      }
+    },
+    "tables": {
+      "style": "w-full caption-bottom text-sm",
+      "header": "border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted",
+      "row": "border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted"
+    },
+    "inputs": {
+      "style": "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+    }
+  },
+  "visual_enhancers": {
+    "glassmorphism": "backdrop-blur-md bg-background/80 border-b border-border/40 (for Headers)",
+    "tracing_beam": "Use on active cards or featured workflows.",
+    "grid_borders": "Use for data-heavy sections (Admin Dashboard).",
+    "micro_interactions": "Hover states on all interactive elements. Tooltips for icons."
+  },
+  "assets": {
+    "images": {
+      "login_bg": "https://images.pexels.com/photos/28428587/pexels-photo-28428587.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "logo_placeholder": "https://via.placeholder.com/150",
+      "avatar_placeholder": "https://ui.shadcn.com/avatars/01.png"
+    },
+    "icons": {
+      "library": "lucide-react",
+      "usage": "Use consistent stroke width (1.5px or 2px)."
+    }
+  },
+  "views": {
+    "login": {
+      "layout": "Split Screen (Left: Form, Right: 3D Abstract Image)",
+      "elements": ["Logo", "Email Input", "Password Input", "Sign In Button", "Forgot Password Link"]
+    },
+    "admin_dashboard": {
+      "layout": "Bento Grid",
+      "widgets": ["Total Clients", "Active Workflows", "Total Executions", "Recent Activity List", "System Health"]
+    },
+    "client_dashboard": {
+      "layout": "Grid of Workflow Cards",
+      "elements": ["Workflow Card (Name, Status, Last Run, Trigger Button)", "Recent Results Table"]
+    },
+    "workflow_detail": {
+      "layout": "Two Column (Left: Trigger Form, Right: Results/History)",
+      "elements": ["Input Form (Auto-generated from params)", "Execution History List", "JSON Result Viewer"]
+    }
+  },
+  "universal_guidelines": [
+    "DO NOT use generic AI slop design.",
+    "DO NOT use gradients on text.",
+    "Ensure high contrast for accessibility.",
+    "Use data-testid for all interactive elements.",
+    "Mobile-first responsive design.",
+    "Dark mode is the default and primary theme."
+  ],
+  "instructions_to_main_agent": [
+    "Follow the file structure of a standard React + FastAPI app.",
+    "Use Shadcn UI components but customize the styling via Tailwind classes to match the 'E1' persona.",
+    "Implement the 'Bento Grid' layout for dashboards.",
+    "Use 'sonner' for toast notifications.",
+    "Ensure all API calls are handled gracefully with loading states and error messages."
+  ]
+}
