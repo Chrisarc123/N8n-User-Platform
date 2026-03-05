@@ -1,34 +1,70 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(240 6% 7%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(240 4% 20%);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(240 4% 30%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+/* Sidebar links */
+.sidebar-link {
+  @apply flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium transition-all duration-200;
+  @apply text-muted-foreground hover:text-foreground hover:bg-secondary;
+}
+.sidebar-link.active {
+  @apply text-primary bg-primary/10;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+/* Fade in up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease-out forwards;
+  opacity: 0;
 }
 
-.App-link {
-    color: #61dafb;
+/* Status badges */
+.status-success {
+  @apply bg-emerald-500/15 text-emerald-400 border-emerald-500/20;
+}
+.status-error {
+  @apply bg-red-500/15 text-red-400 border-red-500/20;
+}
+.status-running {
+  @apply bg-blue-500/15 text-blue-400 border-blue-500/20;
+}
+.status-pending {
+  @apply bg-amber-500/15 text-amber-400 border-amber-500/20;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+/* Glass header */
+.glass-header {
+  @apply backdrop-blur-md bg-background/80 border-b border-border/40;
+}
+
+/* JSON viewer */
+.json-viewer {
+  @apply font-mono text-sm p-4 rounded-lg bg-background border overflow-auto max-h-[500px] whitespace-pre-wrap break-words;
+  color: hsl(var(--muted-foreground));
+}
+
+/* Font helpers */
+.font-heading {
+  font-family: 'Manrope', sans-serif;
 }
