@@ -1,0 +1,40 @@
+Here's how to get your FlowPortal code:
+
+Push to GitHub (Recommended)
+Click "Save to GitHub" button in the chat interface (top area)
+Connect your GitHub account if not already connected
+Select your repository and branch
+Click "PUSH TO GITHUB" — your entire codebase gets pushed
+Then just git clone it on your server.
+
+Deployment on Your Own Server
+Once you have the code, here's what you need:
+
+Requirements:
+
+Node.js 18+ (for React frontend)
+Python 3.11+ (for FastAPI backend)
+MongoDB (local or Atlas)
+Backend setup:
+
+cd backend
+pip install -r requirements.txt
+# Edit .env with your own values:
+#   MONGO_URL, DB_NAME, JWT_SECRET, CORS_ORIGINS
+uvicorn server:app --host 0.0.0.0 --port 8001
+Frontend setup:
+
+cd frontend
+yarn install
+# Edit .env:
+#   REACT_APP_BACKEND_URL=https://your-domain.com
+yarn build    # creates production build in /build
+# Serve /build with nginx, caddy, or any static file server
+Key .env variables to update:
+
+File	Variable	Set to
+backend/.env	MONGO_URL	Your MongoDB connection string
+backend/.env	JWT_SECRET	A strong random secret
+backend/.env	CORS_ORIGINS	Your frontend domain
+frontend/.env	REACT_APP_BACKEND_URL	Your backend URL (must include /api routing)
+Default admin login: admin@flowportal.com / admin123 — change this after first login.
